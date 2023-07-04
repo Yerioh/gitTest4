@@ -5,7 +5,404 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    @font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1{
+        text-align: center;
+    }
+    #frame{
+        width: 400px;
+        height: 600px;
+        border: 1px solid black;
+        background-color: #dc3838;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 0;
+        margin: 0;
+    }
+    .led{
+        width: 400px;
+        height: 20%;
+        border-bottom: 1px solid;
+        position: relative;
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+    #led1{
+        width: 50px;
+        height: 50px;
+        border: 5px solid white;
+        position: relative;
+        left: 15px;
+        top: 10px;
+        background-color: blue;
+        border-radius: 50%;
+    }
+    .small-led{
+        width: 10px;
+        height: 10px;
+        position: relative;
+        left: 20px;
+        top: 10px;
+        border: 2px solid;
+        border-radius: 50%;
+        margin: 5px;
+    }
+    #led2{
+        background-color: red;
+    }
+    #led3{
+        background-color: yellow;
+    }
+    #led4{
+        background-color: green;
+    }
+    .body1{
+        width: 400px;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #display{
+        width: 300px;
+        height: 250px;
+        border: 1px solid grey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 30px;
+        background-color: white;
+        border-radius: 10px;
+
+    }
+    #info{
+        width: 230px;
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        top: 25px;
+        background-color: #00000054;
+        border : 1px solid black;
+        border-radius: 3px;
+        font-family: 'SUITE-Regular';
+    }
+    .img-div{
+        width: 110px;
+        position: relative;
+        top: 30px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-weight: bold;
+    }
+    #poke-img{
+        width: 100px;
+        height: 100px;
+    }
+    .info-div{
+        width: 120px;
+        text-align: center;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 30px;
+        line-height: 50px;
+    }
+
+    .body2{
+        width: 400px;
+        height: 30%;
+        display: flex;
+    }
+    #print{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        border: 1px solid grey;
+        border-radius: 50%;
+        position: relative;
+        left: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+    #id-input{
+        width: 120px;
+        height: 60px;
+        background-color: aquamarine;
+        border: 1px solid grey;
+        position: relative;
+        top: 50px;
+        left: 30px;
+        text-align: center;
+        font-family: 'SUITE-Regular';
+        font-size: 25px;
+        font-weight: bold;;
+    }
+    .cross-button{
+        width: 150px;
+        height: 150px;
+        position: relative;
+        left:50px;
+    }
+    .cross-top{
+        width: 150px;
+        height: 55px;
+    }
+    #button-top{
+        width: 40px;
+        height: 55px;
+        position: relative;
+        left: 55px;
+        cursor: pointer;
+        background-color: black;
+        border-top: 1px solid grey;
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        border-bottom: none;
+    }
+    .cross-mid{
+        width: 150px;
+        height: 40px;
+        display: flex;
+    }
+    #button-center{
+        width: 40px;
+        height: 40px;
+        background-color: black;
+    }
+    #button-left{
+        width: 55px;
+        height: 40px;
+        cursor: pointer;
+        background-color: black;
+        border-top: 1px solid grey;
+        border-left: 1px solid grey;
+        border-right: none;
+        border-bottom: 1px solid grey;
+    }
+    #button-right{
+        width: 55px;
+        height: 40px;
+        cursor: pointer;
+        background-color: black;
+        border-top: 1px solid grey;
+        border-left: none;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
+    }
+    .cross-bot{
+        width: 150px;
+        height: 55px;
+    }
+    #button-bot{
+        width: 40px;
+        height: 55px;
+        position: relative;
+        left: 55px;
+        cursor: pointer;
+        background-color: black;
+        border-top: none;
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey
+    }
+</style>
 <body>
-    hello world!!!
+    <h1>나만의 포켓몬 도감</h1>
+
+    <div id="frame">
+        <div class="led">
+            <div id="led1"></div>
+            <div id="led2" class="small-led"></div>
+            <div id="led3" class="small-led"></div>
+            <div id="led4" class="small-led"></div>
+        </div>
+        <div class="body1">
+            <div id="display">
+                <div id="info">
+                    <!-- <div class="img-div">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="" id="poke-img">
+                        <span>No.<span>1</span></span>
+                        <span>이상해씨</span>
+                    </div>
+                    <div class="info-div">
+                        <span>씨앗포켓몬</span>
+                        <span>키: 0.7m</span>
+                        <span>몸무게: 6.9kg</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="body2">
+            <button id="print"></button>
+            <input type="text" id="id-input">
+            <div class="cross-button">
+                <div class="cross-top">
+                    <button id="button-top"></button>
+                </div>
+                <div class="cross-mid">
+                    <button id="button-left"></button>
+                    <div id="button-center"></div>
+                    <button id="button-right"></button>
+                </div>
+                <div class="cross-bot">
+                    <button id="button-bot"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery 불러오기 -->
+    <script src="./jquery-3.7.0.js"></script>
+    <script>
+        let pokeList1=[]; // 종, 이름을 저장하는 배열
+        let pokeList2=[]; // 키, 몸무게를 저장하는 배열
+        const pokeData1 =(id)=>{ //종, 이름을 가져오는 함수
+            let pokeURL = `https://pokeapi.co/api/v2/pokemon-species/${id}/`
+            $.ajax({
+                url: pokeURL,
+                async: false,
+                success: (result)=>{
+                    pokeList1.push({
+                        name: result.names[2].name,
+                        genus: result.genera[1].genus
+                    })
+                }
+            })
+        }
+        const pokeData2 = (id)=>{ //키,몸무게를 저장하는 함수
+            let pokeURL =`https://pokeapi.co/api/v2/pokemon/${id}/`
+            $.ajax({
+                url: pokeURL,
+                async: false,
+                success: (result)=>{
+                    pokeList2.push({
+                        height : result.height/10,
+                        weight : result.weight/10
+                    })
+                }
+            })
+        }
+        const printPoke = ()=>{ // 입력한 데이터에 맞게 출력하는 함수
+            let id = $('#id-input').val();
+            let resultHTML =`
+                <div class="img-div">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="" id="poke-img">
+                            <span>No.<span id="poke-id">${id}</span></span>
+                            <span>${pokeList1[id-1].name}</span>
+                </div>
+                <div class="info-div">
+                    <span>${pokeList1[id-1].genus}</span>
+                    <span>키: ${pokeList2[id-1].height}m</span>
+                    <span>몸무게: ${pokeList2[id-1].weight}kg</span>
+                </div>
+            `
+            $('#info').html(resultHTML)
+            $('#id-input').val('')
+        }
+        const upPoke = ()=>{
+            let id = parseInt($('#poke-id').text())
+            if(id<=pokeList1.length-10){
+                id += 10
+            }else{
+                id = pokeList1.length
+            }
+            let resultHTML =`
+                    <div class="img-div">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="" id="poke-img">
+                                <span>No.<span id="poke-id">${id}</span></span>
+                                <span>${pokeList1[id-1].name}</span>
+                    </div>
+                    <div class="info-div">
+                        <span>${pokeList1[id-1].genus}</span>
+                        <span>키: ${pokeList2[id-1].height}m</span>
+                        <span>몸무게: ${pokeList2[id-1].weight}kg</span>
+                    </div>
+                `
+            $('#info').html(resultHTML)
+        }
+        const downPoke = ()=>{
+            let id = parseInt($('#poke-id').text())
+            if(id>10){
+                id -= 10
+            }else{
+                id=1
+            }
+            let resultHTML =`
+                <div class="img-div">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="" id="poke-img">
+                            <span>No.<span id="poke-id">${id}</span></span>
+                            <span>${pokeList1[id-1].name}</span>
+                </div>
+                <div class="info-div">
+                    <span>${pokeList1[id-1].genus}</span>
+                    <span>키: ${pokeList2[id-1].height}m</span>
+                    <span>몸무게: ${pokeList2[id-1].weight}kg</span>
+                </div>
+            `
+            $('#info').html(resultHTML)
+        }
+        const rightPoke = ()=>{
+            let id = parseInt($('#poke-id').text())
+            if(id<=pokeList1.length-1){
+                id += 1
+            }
+            let resultHTML =`
+                <div class="img-div">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="" id="poke-img">
+                            <span>No.<span id="poke-id">${id}</span></span>
+                            <span>${pokeList1[id-1].name}</span>
+                </div>
+                <div class="info-div">
+                    <span>${pokeList1[id-1].genus}</span>
+                    <span>키: ${pokeList2[id-1].height}m</span>
+                    <span>몸무게: ${pokeList2[id-1].weight}kg</span>
+                </div>
+            `
+            $('#info').html(resultHTML)
+        }
+        const leftPoke = ()=>{
+            let id = parseInt($('#poke-id').text())
+            id -= 1
+            let resultHTML =`
+                <div class="img-div">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="" id="poke-img">
+                            <span>No.<span id="poke-id">${id}</span></span>
+                            <span>${pokeList1[id-1].name}</span>
+                </div>
+                <div class="info-div">
+                    <span>${pokeList1[id-1].genus}</span>
+                    <span>키: ${pokeList2[id-1].height}m</span>
+                    <span>몸무게: ${pokeList2[id-1].weight}kg</span>
+                </div>
+            `
+            $('#info').html(resultHTML)
+        }
+        for(let i=1;i<152;i++){ //데이터를 저장하는 반복문
+            pokeData1(i)
+            pokeData2(i)
+        }
+        $('#print').on('click',printPoke)
+        $('#button-top').on('click',upPoke)
+        $('#button-bot').on('click',downPoke)
+        $('#button-right').on('click',rightPoke)
+        $('#button-left').on('click',leftPoke)
+    </script>
 </body>
 </html>
